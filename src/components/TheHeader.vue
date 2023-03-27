@@ -83,8 +83,6 @@ export default{
 #header{
     flex-direction: row;
     width: 80%;
-    background-color: bisque; /*Debug feature*/ 
-
 }
 
 #logoheader{
