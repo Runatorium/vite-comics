@@ -74,7 +74,6 @@ h3{
 }
 .card img{
     height: 175px;
-    widows: 175px;
 }
 
 </style>
