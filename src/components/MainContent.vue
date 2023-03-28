@@ -7,11 +7,6 @@ import { onMounted } from 'vue';
      props:{
             data: Array
         },
-        setup(props){
-        onMounted(()=>{
-            console.log(props.data)
-        });    
-    },
 };
 
 
@@ -21,14 +16,19 @@ import { onMounted } from 'vue';
 
 <template>
     <div id="maincontainer">
-        <div id="subcontainer">
-            <div v-for="(card) in data" class="card">
-                <img :src="card.thumb" alt="">
-                <h4>{{card.series}}</h4>
+            <div id="adjustcontainer">
+                <div id="subcontainer">
+                    <div v-for="(card) in data" class="card">
+                        <img :src="card.thumb" alt="">
+                        <h4>{{card.series}}</h4>
+                    </div>
+                </div> 
+            </div>
+            <div id="bottomcontainer">
+                <h3>LOAD MORE</h3>
             </div>
         </div>
-    </div>
-
+        
 </template>
 
 <style scoped>
@@ -36,14 +36,19 @@ import { onMounted } from 'vue';
 #maincontainer{
     background-color: black;
     display: flex;
-    justify-content: center;
-    widows: 100%;
-    height: 500px;
+    flex-direction: column;
+    height: 600px;
 }
-
+#adjustcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
 #subcontainer{
     padding: 20px;
     width: 80%;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -51,14 +56,25 @@ import { onMounted } from 'vue';
 h4{
     color: white;
 }
+
+h3{
+    display: inline;
+    padding: 10px 40px;
+    background-color: rgb(8, 103, 197);
+    color: white;
+}
+#bottomcontainer{
+    text-align: center;
+}
 .card{
+    display: inline;
     text-align: center;
     height: 150px;
     width: calc(100% / 6);
 }
 .card img{
-    height: 150px;
-    widows: 150px;
+    height: 175px;
+    widows: 175px;
 }
 
 </style>
