@@ -59,10 +59,12 @@ export default{
     display: flex;
     align-items: center;
     color: white;
+    padding: 30px;
 }
 
 .box img{
-    width: 50%;
+    width: 35px;
+    padding-right: 10px;
 }
 
 </style>
